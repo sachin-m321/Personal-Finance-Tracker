@@ -195,3 +195,17 @@ http://localhost:5173
 Full Stack Development Project
 
 **Technologies:** React.js | Java | Spring Boot | SQL Server
+
+A full-stack Personal Finance Tracker built using React.js,
+Java, Spring Boot, Spring Data JPA, and Microsoft SQL Server.
+
+## Screenshots
+
+### Dashboard
+![Dashboard](screenshots/Dashboard.png)
+
+### Transaction Management
+![Transaction Management](screenshots/Transaction.png)
+
+### Edit Transaction
+![Edit Transaction](screenshots/Edit_Transaction.png)
