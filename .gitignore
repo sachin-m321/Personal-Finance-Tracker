@@ -1,0 +1,22 @@
+# React frontend
+Tracker-app/node_modules/
+Tracker-app/dist/
+Tracker-app/.env
+Tracker-app/.env.local
+
+# Spring Boot backend
+finance-backend/target/
+finance-backend/.env
+finance-backend/application-local.properties
+
+# IDE settings
+.vscode/
+.idea/
+
+# Logs and generated files
+*.log
+*.class
+
+# OS files
+.DS_Store
+Thumbs.db

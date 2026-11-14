@@ -1,0 +1,626 @@
+
+/* ========================================
+   GLOBAL STYLES
+======================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f6f3;
+  color: #17231c;
+  overflow-x: hidden;
+}
+
+.finance-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 25px 35px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* ========================================
+   HEADER
+======================================== */
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.page-header h1 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #123b2b;
+  margin-bottom: 5px;
+}
+
+.page-header p {
+  color: #777;
+  font-size: 14px;
+  margin: 0;
+}
+
+.dashboard-label {
+  background: #e0eee5;
+  color: #17613e;
+  padding: 9px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* ========================================
+   SUCCESS / ERROR MESSAGE
+======================================== */
+
+.finance-page > [role="status"] {
+  position: static !important;
+  display: inline-block;
+  align-self: flex-end;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0;
+  padding: 10px 16px;
+  border-radius: 8px;
+  background-color: #dff3e5;
+  color: #155724;
+  font-size: 13px;
+  line-height: 1.4;
+  box-shadow: none;
+  overflow-wrap: anywhere;
+}
+
+/* ========================================
+   BALANCE CARD
+======================================== */
+
+.balance-card {
+  background: linear-gradient(120deg, #123b2b, #206b48);
+  color: white;
+  padding: 24px 28px;
+  border-radius: 12px;
+}
+
+.balance-card p {
+  font-size: 14px;
+  margin-bottom: 8px;
+  opacity: 0.9;
+}
+
+.balance-card h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 7px;
+}
+
+.balance-card span {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+/* ========================================
+   SUMMARY CARDS
+======================================== */
+
+.summary-section {
+  margin: 0;
+}
+
+.summary-section > div {
+  padding-left: 7px;
+  padding-right: 7px;
+}
+
+.summary-card {
+  background: white;
+  border: 1px solid #e0e5df;
+  border-radius: 11px;
+  padding: 17px;
+  height: 100%;
+}
+
+.summary-card p {
+  color: #777;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.summary-card h3 {
+  font-size: 23px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.income {
+  color: #07833b !important;
+}
+
+.expense {
+  color: #d34b20 !important;
+}
+
+/* ========================================
+   COMMON CONTENT CARDS
+======================================== */
+
+.content-card {
+  background: white;
+  border: 1px solid #e0e5df;
+  border-radius: 11px;
+  padding: 18px 20px;
+}
+
+.content-card h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #173b2c;
+  margin-bottom: 17px;
+}
+
+/* ========================================
+   ADD / EDIT TRANSACTION FORM
+======================================== */
+
+.add-section form {
+  width: 100%;
+}
+
+.form-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #39463e;
+  margin-bottom: 7px;
+}
+
+.form-control,
+.form-select {
+  min-height: 39px;
+  border: 1px solid #dce3dc;
+  border-radius: 7px;
+  font-size: 14px;
+  box-shadow: none !important;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #26734d;
+  box-shadow: 0 0 0 2px rgba(38, 115, 77, 0.1) !important;
+}
+
+.add-button {
+  min-height: 39px;
+  background-color: #174a32;
+  color: white;
+  border: none;
+  border-radius: 7px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.add-button:hover {
+  background-color: #226a47;
+  color: white;
+}
+
+/* ========================================
+   TRANSACTION SECTION
+======================================== */
+
+.transactions-section {
+  display: flex;
+  flex-direction: column;
+  min-height: 300px;
+}
+
+.transactions-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.transactions-header h2 {
+  margin-bottom: 5px;
+}
+
+.transactions-header p {
+  font-size: 13px;
+  color: #777;
+  margin: 0;
+}
+
+.transaction-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 48%;
+}
+
+.transaction-controls input {
+  flex: 1;
+  min-width: 0;
+}
+
+.transaction-controls select {
+  width: 185px;
+}
+
+/* ========================================
+   TRANSACTION TABLE
+======================================== */
+
+.transaction-table-wrap {
+  width: 100%;
+  max-height: 380px;
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
+.transaction-table {
+  width: 100%;
+  margin-bottom: 0;
+  white-space: nowrap;
+}
+
+.transaction-table thead th {
+  background-color: #f3f6f2;
+  color: #405247;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 12px 10px;
+  border-bottom: 1px solid #e0e5df;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.transaction-table tbody td {
+  padding: 11px 10px;
+  font-size: 14px;
+  border-bottom: 1px solid #edf0ec;
+  vertical-align: middle;
+}
+
+.transaction-name {
+  font-weight: 600;
+  color: #111;
+}
+
+/* ========================================
+   INCOME / EXPENSE LABELS
+======================================== */
+
+.type-label {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.type-label.income {
+  background-color: #e2f3e6;
+  color: #07833b;
+}
+
+.type-label.expense {
+  background-color: #fce9e2;
+  color: #d34b20;
+}
+
+.amount-cell {
+  font-weight: 700;
+  font-size: 13px;
+}
+
+/* ========================================
+   EDIT AND DELETE BUTTONS
+======================================== */
+
+.edit-button,
+.delete-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 34px;
+  padding: 0;
+  border: none;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+.edit-button {
+  background-color: #4a8a6c;
+  color: white;
+  margin-right: 6px;
+}
+
+.edit-button:hover {
+  background-color: #146c43;
+  color: white;
+}
+
+.delete-button {
+  background-color: #fbe9e7;
+  color: #9c2619;
+}
+
+.delete-button:hover {
+  background-color: #f5d1cd;
+  color: #a93226;
+}
+
+/* ========================================
+   EMPTY MESSAGE
+======================================== */
+
+.empty-message {
+  text-align: center;
+  color: #888;
+  padding: 25px !important;
+}
+
+/* ========================================
+   TRANSACTION FOOTER
+======================================== */
+
+.transaction-footer {
+  border-top: 1px solid #edf0ec;
+  padding-top: 12px;
+  margin-top: 8px;
+  font-size: 12px;
+  color: #777;
+}
+
+/* ========================================
+   FINANCE CHARTS
+======================================== */
+
+.finance-charts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 15px;
+}
+
+.chart-card {
+  background: white;
+  border: 1px solid #e0e5df;
+  border-radius: 11px;
+  padding: 18px;
+  min-width: 0;
+}
+
+.chart-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #173b2c;
+  margin-bottom: 6px;
+}
+
+.chart-description {
+  font-size: 12px;
+  color: #777;
+  margin-bottom: 15px;
+}
+
+.chart-container {
+  width: 100%;
+  min-height: 250px;
+}
+
+/* ========================================
+   TABLET RESPONSIVE
+======================================== */
+
+@media (max-width: 1000px) {
+  .finance-page {
+    padding: 20px;
+  }
+
+  .transaction-controls {
+    width: 55%;
+  }
+
+  .transaction-controls select {
+    width: 160px;
+  }
+
+  .finance-charts {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ========================================
+   MOBILE RESPONSIVE
+======================================== */
+
+@media (max-width: 768px) {
+  .finance-page {
+    padding: 14px;
+    gap: 12px;
+  }
+
+  .page-header {
+    align-items: flex-start;
+  }
+
+  .page-header h1 {
+    font-size: 21px;
+  }
+
+  .dashboard-label {
+    font-size: 11px;
+    padding: 7px 10px;
+  }
+
+  .balance-card {
+    padding: 20px;
+  }
+
+  .balance-card h2 {
+    font-size: 27px;
+  }
+
+  .summary-card {
+    padding: 14px;
+  }
+
+  .summary-card h3 {
+    font-size: 20px;
+  }
+
+  .content-card {
+    padding: 15px;
+  }
+
+  .transactions-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .transaction-controls {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .transaction-controls input,
+  .transaction-controls select {
+    width: 100%;
+  }
+
+  .transaction-table-wrap {
+    max-height: 350px;
+  }
+
+  .transaction-table {
+    min-width: 650px;
+  }
+
+  .edit-button,
+  .delete-button {
+    width: 58px;
+    height: 32px;
+  }
+
+  .finance-charts {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 480px) {
+  .page-header h1 {
+    font-size: 18px;
+  }
+
+  .page-header p {
+    font-size: 12px;
+  }
+
+  .balance-card h2 {
+    font-size: 24px;
+  }
+
+  .content-card h2 {
+    font-size: 16px;
+  }
+
+  .finance-page > [role="status"] {
+    align-self: stretch;
+    width: 100%;
+  }
+}
+
+
+/* Balance card with finance illustration */
+
+.balance-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 180px;
+  padding: 25px 35px;
+  overflow: hidden;
+}
+
+.balance-info {
+  flex: 1;
+  min-width: 0;
+  z-index: 1;
+}
+
+.balance-info p {
+  font-size: 15px;
+  margin-bottom: 12px;
+}
+
+.balance-info h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.balance-info span {
+  font-size: 13px;
+}
+
+.balance-illustration {
+  width: 260px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.balance-illustration svg {
+  width: 100%;
+  max-height: 160px;
+  display: block;
+}
+
+/* Mobile responsive */
+
+@media (max-width: 600px) {
+  .balance-card {
+    min-height: 150px;
+    padding: 20px;
+  }
+
+  .balance-info h2 {
+    font-size: 25px;
+  }
+
+  .balance-illustration {
+    width: 115px;
+  }
+
+  .balance-illustration svg {
+    max-height: 110px;
+  }
+}
+
